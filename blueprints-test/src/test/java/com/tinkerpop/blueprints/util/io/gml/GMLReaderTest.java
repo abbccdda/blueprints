@@ -135,7 +135,7 @@ public class GMLReaderTest {
         String osName = System.getProperty("os.name");
         String file = "/tmp/simple-" + UUID.randomUUID() + ".gml";
         if (osName.toLowerCase().contains("windows")) {
-            file = ".\\simple-" + UUID.randomUUID() + ".gml";
+            file = "C:\\Users\\appveyor\\AppData\\Local\\Temp\\simple-" + UUID.randomUUID() + ".gml";
         }
         GMLWriter.outputGraph(graph1, file);
 
