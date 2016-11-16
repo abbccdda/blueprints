@@ -132,7 +132,11 @@ public class GMLReaderTest {
         Vertex toRemove = graph1.getVertex("123");
         graph1.removeVertex(toRemove);
 
+        String osName = System.getProperty("os.name");
         String file = "/tmp/simple-" + UUID.randomUUID() + ".gml";
+        if (osName.toLowerCase().contains("windows")) {
+            file = ".\\simple-" + UUID.randomUUID() + ".gml";
+        }
         GMLWriter.outputGraph(graph1, file);
 
         TinkerGraph graph2 = new TinkerGraph();
